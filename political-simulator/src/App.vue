@@ -830,6 +830,44 @@ onBeforeUnmount(() => {
   outline-offset: 2px;
 }
 
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(163, 183, 216, 0.2);
+  border-radius: 8px;
+  color: #c6d3ef;
+  text-decoration: none;
+  font-size: 0.78rem;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+}
+
+.github-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4f9cff;
+  color: #4f9cff;
+  transform: translateY(-1px);
+}
+
+.github-icon {
+  color: currentColor;
+}
+
+@media (max-width: 480px) {
+  .github-text {
+    display: none;
+    /* ဖုန်းမှာဆိုရင် စာသားဖျောက်ပြီး Logo ပဲပြမယ် */
+  }
+
+  .github-link {
+    padding: 5px;
+    margin-right: 4px;
+  }
+}
+
 .field-note {
   margin: 0;
   color: #8fa1c4;
