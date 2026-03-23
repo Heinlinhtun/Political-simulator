@@ -19,12 +19,8 @@
         <div class="control-stack">
           <div class="control-block control-block--muted">
             <label class="field-label" for="country-select">{{ t('countryProfile') }}</label>
-            <select
-              id="country-select"
-              v-model="selectedCountryCode"
-              class="field-input"
-              :disabled="countryListLoading"
-            >
+            <select id="country-select" v-model="selectedCountryCode" class="field-input"
+              :disabled="countryListLoading">
               <option value="" disabled>{{ t('selectCountry') }}</option>
               <option v-for="country in countries" :key="country.cca2" :value="country.cca2">
                 {{ country.name }} ({{ country.cca2 }})
@@ -101,11 +97,9 @@
             </select>
           </div>
 
-          <button
-            @click="isRunning ? stopSimulation() : startSimulation()"
+          <button @click="isRunning ? stopSimulation() : startSimulation()"
             :class="['run-button', { 'run-button--stop': isRunning }]"
-            :disabled="!selectedCountryCode || profileLoading"
-          >
+            :disabled="!selectedCountryCode || profileLoading">
             {{ isRunning ? t('stopSimulation') : t('runSimulation') }}
           </button>
         </div>
@@ -257,30 +251,30 @@ const translations = {
     language: 'ဘာသာစကား',
     english: 'အင်္ဂလိပ်',
     burmese: 'မြန်မာ',
-    title: 'နိုင်ငံရေးစနစ် စမ်းသပ်ကိရိယာ v2.0',
+    title: 'နိုင်ငံရေးစနစ် Simulator v2.0',
     subtitle: 'တိုင်းပြည်ဒေတာအခြေပြု မော်ဒယ် (Public API)',
     parameters: 'ကန့်သတ်ချက်များ',
     countryProfile: 'နိုင်ငံရွေးချယ်မှု',
     selectCountry: 'နိုင်ငံရွေးချယ်ပါ',
     loadingCountries: 'နိုင်ငံစာရင်း ဖတ်နေသည်...',
     sourceApis: 'ရင်းမြစ်: REST Countries + World Bank',
-    education: 'ပညာရေး (H)',
-    civicVirtue: 'လူထုကျင့်ဝတ် (M)',
-    discipline: 'စည်းကမ်း (Sd)',
-    resources: 'အရင်းအမြစ် (R)',
-    unemployment: 'အလုပ်လက်မဲ့အန္တရာယ် (U)',
-    inflation: 'ဖောင်းပွမှုအန္တရာယ် (I)',
-    runPeriod: 'Run ကာလ (နှစ်)',
+    education: 'လူထုပညာရေး (H)',
+    civicVirtue: 'လူထုကျင့်ဝတ်လိုက်နာမှု (M)',
+    discipline: 'တစ်ဦးချင်းစည်းကမ်း (Sd)',
+    resources: 'လူ/လူလုပ်/သဘာဝ/ဘဏ္ဍာအရင်းအမြစ် (R)',
+    unemployment: 'အလုပ်လက်မဲ့ဖြစ်ခြင်း (U)',
+    inflation: 'ငွေကြေးဖောင်းပွမှု (I)',
+    runPeriod: 'Run မည့်ကာလ (နှစ်)',
     chooseSystem: 'စနစ်ရွေးချယ်ပါ',
     communism: 'ကွန်မြူနစ်',
     socialism: 'ဆိုရှယ်လစ်',
     federalism: 'ဖက်ဒရယ်',
-    capitalism: 'ကပ္ပီတယ်လစ်',
+    capitalism: 'အရင်းရှင်စနစ်',
     runSimulation: 'Simulation စတင်မည်',
     stopSimulation: 'Simulation ရပ်မည်',
     currentYear: 'လက်ရှိနှစ်',
     stability: 'တည်ငြိမ်မှု',
-    corruption: 'အကျင့်ပျက်မှု',
+    corruption: 'အကျင့်ပျက်ခြစားမှု',
     equality: 'တန်းတူညီမျှမှု',
     countrySnapshot: 'နိုင်ငံအခြေအနေ',
     refreshingData: 'ဒေတာ ပြန်လည်ဖတ်နေသည်...',
@@ -289,13 +283,13 @@ const translations = {
     literacy: 'စာတတ်မြောက်မှု',
     govEffectiveness: 'အုပ်ချုပ်ရေးစွမ်းဆောင်ရည်',
     ruleOfLaw: 'ဥပဒေစိုးမိုးမှု',
-    gini: 'ဂီနီ',
+    gini: 'ဂီနီ(ဝင်ငွေမညီမျှမှု)',
     unemploymentRate: 'အလုပ်လက်မဲ့နှုန်း',
-    inflationRate: 'ဖောင်းပွမှုနှုန်း',
+    inflationRate: 'ငွေကြေးဖောင်းပွမှုနှုန်း',
     chartEmpty: 'နိုင်ငံရွေးပြီး "Simulation စတင်မည်" ကိုနှိပ်ပါ။',
     noCountrySelected: 'နိုင်ငံမရွေးထားသေးပါ',
     chartStability: 'တည်ငြိမ်မှု %',
-    chartCorruption: 'အကျင့်ပျက်မှု %',
+    chartCorruption: 'အကျင့်ပျက်ခြစားမှု %',
     chartEquality: 'တန်းတူညီမျှမှု %',
     errCountryListUnavailable: 'Live country list မရရှိပါ။ Offline fallback ကိုအသုံးပြုထားသည်။',
     errWorldBankPartial: 'World Bank အချက်အလက်အချို့ မရနိုင်ပါ။ ရရှိသလောက်ဒေတာနဲ့ ဆက်လုပ်မည်။',
